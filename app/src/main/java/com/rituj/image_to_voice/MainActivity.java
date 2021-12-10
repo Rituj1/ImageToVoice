@@ -29,7 +29,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
-    TextView textView;
+    TextView tv;
     TextToSpeech t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
         imageView = findViewById(R.id.imageId);
 
-        textView = findViewById(R.id.textId);
+        tv = findViewById(R.id.textId);
         //check app level permission is granted for Camera
         if (checkSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
 
