@@ -14,7 +14,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
-
+import android.speech.tts.TextToSpeech;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.gms.tasks.Task;
@@ -24,16 +24,26 @@ import com.google.firebase.ml.vision.common.FirebaseVisionImage;
 import com.google.firebase.ml.vision.text.FirebaseVisionText;
 import com.google.firebase.ml.vision.text.FirebaseVisionTextRecognizer;
 
+import java.util.Locale;
+
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
     TextView textView;
-
+    TextToSpeech t1;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         FirebaseApp.initializeApp(this);
         setContentView(R.layout.activity_main);
+        t1 = new TextToSpeech(getApplicationContext(), new TextToSpeech.OnInitListener() {
+            @Override
+            public void onInit(int i) {
+                if(i!= TextToSpeech.ERROR){
+                    t1.setLanguage(Locale.UK);
+                }
+            }
+        });
 
         imageView = findViewById(R.id.imageId);
 
@@ -73,7 +83,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onSuccess(FirebaseVisionText firebaseVisionText) {
                 String s = firebaseVisionText.getText();
-                textView.setText(s);
+                t1.speak(s,TextToSpeech.QUEUE_FLUSH,null);
             }
         });
         //6. if is failed
