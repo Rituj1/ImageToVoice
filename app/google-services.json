@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "889056772658",
+    "project_id": "image-to-voice",
+    "storage_bucket": "image-to-voice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:889056772658:android:96cfc1869e768d3e71722b",
+        "android_client_info": {
+          "package_name": "com.rituj.image_to_voice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "889056772658-v01i6c06kc6bkd4dermhtgak4num4q2o.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1Z_vzr6o8sM4fngYjrT2Eu9ltjRgP-PE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "889056772658-v01i6c06kc6bkd4dermhtgak4num4q2o.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
